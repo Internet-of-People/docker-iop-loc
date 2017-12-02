@@ -30,7 +30,7 @@ If you do not want the data persisted you can leave the -v command
 ## Running the container
 
 ```
-docker run -d --name iop-can -p 14001:14001 -p 14002:14002 -p 127.0.0.1:15001:15001 -p 18080:18080  -v /opt/ipfs:/data/ipfs libertaria/iop-can
+docker run -d --name iop-loc -p 16980:16980 -p 16981:16981 -p 127.0.0.1:16982:16982 -e  -v /opt/loc:/data/locnet/ libertaria/iop-loc
 
 ```
 ## Stopping container
@@ -39,7 +39,6 @@ docker run -d --name iop-can -p 14001:14001 -p 14002:14002 -p 127.0.0.1:15001:15
 docker stop iop-loc
 
 ```
-
 
 ## Starting container
 
@@ -60,6 +59,10 @@ services:
       - 16980:16980
       - 16981:16981
       - 127.0.0.1:16982:16982
+    environment:
+      - NODEID=YourNodeIdHere  
+      - LATITUDE=48.2081743 
+      - LONGITUDE=16.3738189
     volumes:
-      - /opt/ipfs:/data/ipfs
+      - /opt/loc:/data/locnet
 ```  
