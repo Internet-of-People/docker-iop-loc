@@ -1,8 +1,8 @@
-FROM multiarch/alpine:amd64-edge
+FROM multiarch/alpine:armhf-latest-stable
 MAINTAINER wessel<jimfromsa@gmail.com> for Libertaria forked from Lars Gierth <lgierth@ipfs.io>
 
-ENV IOP_VERSION  v1.2-Beta
-ENV IOP_PLATFORM linux-64
+ENV IOP_VERSION  v1.0
+ENV IOP_PLATFORM ARMv7
 
 
 # Ports for node2node, client2node, interprocess communication between local services
